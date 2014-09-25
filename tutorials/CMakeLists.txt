@@ -34,3 +34,9 @@ target_link_libraries (tut05_opspace_and_parameters tut opspace jspace_test yaml
 
 add_executable (tut06_eepos tut06_eepos.cpp)
 target_link_libraries (tut06_eepos tut opspace jspace_test yaml-cpp ${FLTK_LIBRARIES})
+
+install (TARGETS tut00_test tut01_joint_coupling tut02_jtask tut03_gravity_compensation tut04_inertia_coriolis tut05_opspace_and_parameters tut06_eepos
+  RUNTIME DESTINATION bin
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+  )
