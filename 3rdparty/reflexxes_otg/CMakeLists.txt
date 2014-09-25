@@ -17,3 +17,9 @@ cmake_minimum_required (VERSION 2.4.6)
   add_executable (trjgen src/trjgen.cpp)
   target_link_libraries (trjgen reflexxes_otg)
 # not so trivial... # endif (EXISTS $ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
+
+install (TARGETS reflexxes_otg trjgen
+  RUNTIME DESTINATION bin
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+  )
