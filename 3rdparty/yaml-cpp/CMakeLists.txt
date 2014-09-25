@@ -34,7 +34,7 @@ else(WIN32)
   set(_library_dir lib)
 endif(WIN32)
 
-set(INCLUDE_INSTALL_DIR include/yaml-cpp)
+set(INCLUDE_INSTALL_DIR include/wbc-yaml-cpp)
 set(LIB_INSTALL_DIR ${_library_dir}${LIB_SUFFIX})
 
 #
@@ -49,29 +49,29 @@ file(GLOB private_headers src/[a-z]*.h)
 file(GLOB sources src/[a-z]*.cpp)
 
 include_directories(${YAML_CPP_SOURCE_DIR}/include)
-add_library(yaml-cpp
+add_library(wbc-yaml-cpp
 	${LIB_TYPE}
 	${public_headers}
 	${private_headers}
 	${sources}
 )
-set_target_properties(yaml-cpp PROPERTIES
+set_target_properties(wbc-yaml-cpp PROPERTIES
 	VERSION "${YAML_CPP_VERSION}"
 	SOVERSION "${YAML_CPP_VERSION_MAJOR}.${YAML_CPP_VERSION_MINOR}"
 )
 
 if(IPHONE)
-set_target_properties(yaml-cpp PROPERTIES XCODE_ATTRIBUTE_IPHONEOS_DEPLOYMENT_TARGET "3.0")
+set_target_properties(wbc-yaml-cpp PROPERTIES XCODE_ATTRIBUTE_IPHONEOS_DEPLOYMENT_TARGET "3.0")
 endif(IPHONE)
 
-install(TARGETS yaml-cpp ${_INSTALL_DESTINATIONS})
+install(TARGETS wbc-yaml-cpp ${_INSTALL_DESTINATIONS})
 install(
 	FILES ${public_headers}
 	DESTINATION ${INCLUDE_INSTALL_DIR}
 )
 
 if(UNIX)
-	set(PC_FILE ${CMAKE_BINARY_DIR}/yaml-cpp.pc)
+	set(PC_FILE ${CMAKE_BINARY_DIR}/wbc-yaml-cpp.pc)
 	configure_file("yaml-cpp.pc.cmake" ${PC_FILE} @ONLY)
 	install(FILES ${PC_FILE} DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
 endif(UNIX)

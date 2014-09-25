@@ -7,5 +7,5 @@ Name: Yaml-cpp
 Description: A YAML parser and emitter for C++
 Version: @YAML_CPP_VERSION@
 Requires:
-Libs: -L${libdir} -lyaml-cpp
+Libs: -L${libdir} -lwbc-yaml-cpp
 Cflags: -I${includedir}

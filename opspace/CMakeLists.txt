@@ -20,7 +20,7 @@ add_library (opspace SHARED
   src/parse_yaml.cpp
   src/Skill.cpp
   )
-target_link_libraries (opspace jspace reflexxes_otg yaml-cpp)
+target_link_libraries (opspace jspace reflexxes_otg wbc-yaml-cpp)
 
 add_executable (testTask src/testTask.cpp)
 target_link_libraries (testTask opspace jspace_test gtest pthread)

@@ -5,6 +5,6 @@ add_executable(run-tests
 	${test_sources}
 	${test_headers}
 )
-target_link_libraries(run-tests yaml-cpp)
+target_link_libraries(run-tests wbc-yaml-cpp)
 
 add_test(yaml-reader-test run-tests)
