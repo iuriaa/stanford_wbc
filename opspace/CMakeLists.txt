@@ -22,6 +22,15 @@ add_library (opspace SHARED
   )
 target_link_libraries (opspace jspace reflexxes_otg wbc-yaml-cpp)
 
+file (GLOB headers "include/opspace/*.hpp")
+install (FILES ${headers} DESTINATION include/opspace)
+
+install (TARGETS opspace
+  RUNTIME DESTINATION bin
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+  )
+
 add_executable (testTask src/testTask.cpp)
 target_link_libraries (testTask opspace jspace_test gtest pthread)
 
